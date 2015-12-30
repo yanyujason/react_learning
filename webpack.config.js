@@ -10,7 +10,8 @@ module.exports = [{
             './src/likeButton.js',
             './src/ticktock.js',
             './src/domNode.js',
-            './src/animation.js'
+            './src/animation.js',
+            './src/imageCarousel.js'
         ]
     },
 
@@ -32,33 +33,6 @@ module.exports = [{
                     presets: ['react', 'es2015']
                 }
             },
-            {
-                test: /\.css$/,
-                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
-            }
         ]
     }
-}, {
-    entry: {
-        main: [
-            './src/all.css'
-        ]
-    },
-    output:{
-        filename: 'public/css/[name].css'
-    },
-    module: {
-        loaders: [
-            {
-                test: /\.css?$/,
-                loader: "style-loader!css-loader",
-                include: [
-                    path.resolve(__dirname, "src"),
-                ]
-            }
-        ]
-    },
-    plugins: [
-        new ExtractTextPlugin("public/css/[name].css")
-    ]
 }];
