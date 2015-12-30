@@ -2,8 +2,6 @@ var React = require('react');
 var ReactDom = require('react-dom');
 var ReactCSSTransitionGroup = require('react-addons-css-transition-group');
 
-require('../src/main.css');
-
 var Animation = React.createClass({
   getInitialState: function() {
     return {items: ['hello', 'world', 'click', 'me']};

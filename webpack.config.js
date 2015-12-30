@@ -1,6 +1,6 @@
 var path = require('path');
 var webpack = require("webpack");
-var HtmlwebpackPlugin = require('html-webpack-plugin');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = [{
     entry: {
@@ -31,6 +31,10 @@ module.exports = [{
                     plugins: ['transform-runtime'],
                     presets: ['react', 'es2015']
                 }
+            },
+            {
+                test: /\.css$/,
+                loader: ExtractTextPlugin.extract("style-loader", "css-loader")
             }
         ]
     }
@@ -55,7 +59,6 @@ module.exports = [{
         ]
     },
     plugins: [
-      //new HtmlwebpackPlugin({title: 'jhahahahahahah'})
-        new webpack.optimize.LimitChunkCountPlugin({ maxChunks: 20 })
+        new ExtractTextPlugin("public/css/[name].css")
     ]
 }];
