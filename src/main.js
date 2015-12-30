@@ -1,3 +1,5 @@
+require('./src/all.css');
+
 var React = require('react')
 var ReactDom = require('react-dom')
 
